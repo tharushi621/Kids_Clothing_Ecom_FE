@@ -11,7 +11,7 @@ export default function CartDrawer() {
     <AnimatePresence>
       {cartOpen && (
         <>
-          {/* Overlay */}
+          
           <motion.div
             className="fixed inset-0 bg-black/30 backdrop-blur-sm z-50"
             initial={{ opacity: 0 }}
@@ -20,7 +20,7 @@ export default function CartDrawer() {
             onClick={() => setCartOpen(false)}
           />
 
-          {/* Drawer */}
+    
           <motion.div
             className="fixed right-0 top-0 bottom-0 w-full max-w-md bg-bloom-cream z-50 shadow-soft-lg flex flex-col"
             initial={{ x: '100%' }}
@@ -28,7 +28,6 @@ export default function CartDrawer() {
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 250 }}
           >
-            {/* Header */}
             <div className="p-6 border-b border-bloom-pink/20 flex items-center justify-between bg-white">
               <div>
                 <h2 className="font-display font-extrabold text-2xl text-text-primary">Your Cart 🛒</h2>
@@ -42,7 +41,6 @@ export default function CartDrawer() {
               </button>
             </div>
 
-            {/* Items */}
             <div className="flex-1 overflow-y-auto p-4 space-y-3">
               {cart.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full gap-4 text-center">
@@ -106,7 +104,6 @@ export default function CartDrawer() {
               )}
             </div>
 
-            {/* Footer */}
             {cart.length > 0 && (
               <div className="p-6 border-t border-bloom-pink/20 bg-white space-y-4">
                 <div className="flex items-center justify-between">
