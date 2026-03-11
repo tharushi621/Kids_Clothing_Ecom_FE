@@ -1,3 +1,123 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #FFFBF5;
+    color: #3D2C2C;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Baloo 2', cursive;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-bloom-pink-dark text-white font-display font-bold px-8 py-3 rounded-pill
+           shadow-pink hover:shadow-soft-lg hover:scale-105 active:scale-95
+           transition-all duration-200 cursor-pointer;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-bloom-pink-dark font-display font-bold px-8 py-3 rounded-pill
+           border-2 border-bloom-pink-dark hover:bg-bloom-pink hover:scale-105
+           active:scale-95 transition-all duration-200 cursor-pointer;
+  }
+
+  .btn-icon {
+    @apply w-10 h-10 rounded-full flex items-center justify-center
+           hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer;
+  }
+
+  .card {
+    @apply bg-white rounded-3xl shadow-card hover:shadow-card-hover
+           transition-all duration-300;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-pill text-sm font-bold;
+  }
+
+  .section-title {
+    @apply font-display font-extrabold text-text-primary;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-2xl border-2 border-bloom-pink/50
+           focus:outline-none focus:border-bloom-pink-dark bg-white
+           font-body text-text-primary placeholder-text-muted
+           transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  .text-gradient-pink {
+    background: linear-gradient(135deg, #FF8FAB, #FF4D6D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-rainbow {
+    background: linear-gradient(135deg, #FF8FAB 0%, #B07FFF 50%, #5AABFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-rainbow {
+    background: linear-gradient(135deg, #FFD6E8 0%, #E8DCFF 50%, #BDE0FE 100%);
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(circle, #FFD6E8 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFBF5;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFD6E8;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF8FAB;
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  background: #FFD6E8 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+.swiper-pagination-bullet-active {
+  background: #FF8FAB !important;
+  width: 24px !important;
+  border-radius: 10px !important;
+}

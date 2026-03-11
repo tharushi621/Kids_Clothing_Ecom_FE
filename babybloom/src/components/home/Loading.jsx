@@ -1331,10 +1331,9 @@ export default function LoadingPage({ onComplete }) {
         className={`lr${phase === "done" ? " done" : ""}`}
         onAnimationEnd={() => phase === "done" && onComplete?.()}
       >
-        {/* Three.js canvas */}
+
         <div className="cv" ref={mountRef} />
 
-        {/* Floating emoji layer */}
         {[
           { e: "👕", s: "9%",   l: "4%",   dur:"3.4s", del:"0s",   sz:35 },
           { e: "🧸", s: "11%",  r: "6%",   dur:"2.8s", del:"0.6s", sz:40 },
