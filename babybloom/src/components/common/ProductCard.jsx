@@ -45,7 +45,7 @@ export default function ProductCard({ product, index = 0 }) {
           onMouseEnter={() => { setHovering(true); if (product.images[1]) setImgIndex(1) }}
           onMouseLeave={() => { setHovering(false); setImgIndex(0) }}
         >
-          {/* Image Container */}
+   
           <div className="relative overflow-hidden bg-bloom-cream aspect-square">
             <motion.img
               key={imgIndex}
@@ -57,21 +57,18 @@ export default function ProductCard({ product, index = 0 }) {
               transition={{ duration: 0.4 }}
             />
 
-            {/* Badge */}
             {product.badge && (
               <div className={`absolute top-3 left-3 ${product.badgeColor} tag text-xs font-display font-bold shadow-soft`}>
                 {product.badge}
               </div>
             )}
 
-            {/* Discount */}
             {discount && (
               <div className="absolute top-3 right-3 bg-bloom-pink-dark text-white tag text-xs font-display font-bold shadow-pink">
                 -{discount}%
               </div>
             )}
 
-            {/* Action Buttons */}
             <motion.div
               className="absolute bottom-3 left-0 right-0 flex justify-center gap-2 px-3"
               initial={{ opacity: 0, y: 10 }}
@@ -101,7 +98,6 @@ export default function ProductCard({ product, index = 0 }) {
               </motion.button>
             </motion.div>
 
-            {/* Stock Low Warning */}
             {product.stock < 20 && (
               <div className="absolute bottom-0 left-0 right-0 bg-bloom-yellow/90 backdrop-blur-sm text-center text-xs font-bold font-body py-1 text-text-primary">
                 Only {product.stock} left!
@@ -109,7 +105,6 @@ export default function ProductCard({ product, index = 0 }) {
             )}
           </div>
 
-          {/* Info */}
           <div className="p-4">
             <div className="flex items-start justify-between gap-2 mb-1">
               <h3 className="font-display font-bold text-text-primary text-sm leading-tight group-hover:text-bloom-pink-dark transition-colors">
@@ -139,7 +134,6 @@ export default function ProductCard({ product, index = 0 }) {
                   <span className="font-body text-text-muted text-sm line-through">${product.originalPrice}</span>
                 )}
               </div>
-              {/* Color dots */}
               <div className="flex gap-1">
                 {product.colors?.slice(0, 3).map((c, i) => (
                   <div key={i} className="w-4 h-4 rounded-full border-2 border-white shadow-sm" style={{ background: c }} />
